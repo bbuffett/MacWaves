@@ -14,14 +14,16 @@ function  magnetic_field(B,x)
    br = zeros(nx);
 
 #  constant radial field
-   br[1:nx] .= B;
+#   br[1:nx] .= B;
 
 #  dipole radial field
 #  br = B * x;
 #
 #  increase rms field toward pole
-#   br2 = B^2 * (0.48/0.65)^2 *(2.5*x.*x .+ 1);
-#   br = sqrt.(br2);
+   Gamma = 2.5;
+   B02 = B^2 / (1.0  + Gamma/3.0);
+   br2 = B02 *(Gamma*x.*x .+ 1);
+   br = sqrt.(br2);
 
    return br
 

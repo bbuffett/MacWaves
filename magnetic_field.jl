@@ -19,6 +19,7 @@ function  magnetic_field(B,x)
 #  dipole radial field
 #  br = B * x;
 #
+#  increase rms field toward pole
 #   br2 = B^2 * (0.48/0.65)^2 *(2.5*x.*x .+ 1);
 #   br = sqrt.(br2);
 

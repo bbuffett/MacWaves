@@ -64,7 +64,7 @@ function macWave(nr,nx,b,Nmax,depth,period)
     iopt = 1;
     N2 = stratification(r,Nmax,rbottom,iopt);
 
-#   magnetic field (constant in x or theta)
+#   magnetic field (a function of x - see code for details)
     br = magnetic_field(B,x);
 
 

@@ -56,7 +56,7 @@ function macWave(nr,nx,b,Nmax,depth,period)
     #println("w1 ",w1," w2 ", w2," w3 ",w3)
 
 
-#   set up grid (shift grid to base of boundary layer)
+#   set up grid 
     rbottom = (L - 1.0e3 * depth)/L;
     r,x,theta = grids(nr,nx,rbottom);
 

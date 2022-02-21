@@ -73,10 +73,8 @@ function velocityphi(r,x,b,mode,d)
    for l = 1 : nx
        k = nr;
        ipos = (l-1)*nr + k;
-#       println(" l ", l, " ipos ",ipos," vphi ",vphi[ipos]," ",vphi[ipos-1])
        vphicmb[l] = vphi[ipos];
        bphicmb[l] = mode[ipos];
-#       println(" l ", vphicmb[l])
    end
 
    return vphicmb,bphicmb

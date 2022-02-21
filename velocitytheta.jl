@@ -44,7 +44,7 @@ function velocitytheta(r,x,b,mode,d)
    end
 
 
-#  extract CMB value
+#  extract CMB value (theta velocity from horizontal momentum eq.)
    for l = 1 : nx
        k = nr;
        ipos = (l-1)*nr + k;

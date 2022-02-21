@@ -11,3 +11,4 @@ include("magnetic_field.jl")
 include("restoring.jl")
 include("velocityphi.jl");
 include("flow.jl");
+include("velocitytheta.jl");

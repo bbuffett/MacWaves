@@ -15,7 +15,7 @@ function velocityphi(r,x,b,mode,d)
     omega = 0.7292e-4;       # rotation rate (1/s)
     sectoyear = 3.155e7;     # seconds in a year
     mu = 4 * pi * 1.0e-7;    # permeability
-    eta = 0.8;            # magnetic diffusivity  (m^2/s)
+    eta = 0.8;               # magnetic diffusivity  (m^2/s)
     rho = 1.0e4;             # density
     L = 3.480e6;             # core radius (length scale)
     bscale = sqrt(rho * mu) * omega * L;
@@ -35,7 +35,7 @@ function velocityphi(r,x,b,mode,d)
    br = magnetic_field(B,x);
 
 #  retrieve required matrices
-   dsp = diffusion(r,x,eta);
+   dsp = diffusion(r,x,Eta);
 
 #  rate of change of bphi
    dbdt = d * mode[1:ndim];
@@ -55,6 +55,11 @@ function velocityphi(r,x,b,mode,d)
 #  integrate for vphi
    dr = r[2] - r[1];
    for l = 1 : nx
+        
+       k = 1
+       ipos = (l-1) * nr + k;
+       vphi[ipos] = 0.0;       # boundary condition at base
+        
        for k = 2 : nr
            ipos = (l-1) * nr + k;
            vphi[ipos] = vphi[ipos-1]+ 0.5*(dvdr[ipos] + dvdr[ipos-1])*dr;
